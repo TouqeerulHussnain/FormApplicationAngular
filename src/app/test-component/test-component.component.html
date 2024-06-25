@@ -1,0 +1,8 @@
+<!-- <p class="m-5 btn btn-primary">{{title}}</p> -->
+<ul *ngFor="let item of todoList">
+
+
+    <app-todo-item [todo]="item" (GoOutEmitter)="deleteTodo($event)">
+
+    </app-todo-item>
+</ul>
