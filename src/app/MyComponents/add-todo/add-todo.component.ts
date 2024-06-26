@@ -12,6 +12,13 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './add-todo.component.css'
 })
 export class AddTodoComponent {
+  OnSubmitMyForm() {
+    console.log("clicked");
+    let todo = new TodoModel();
+    todo.serailNumber = this.serailNumber;
+    console.log(todo.serailNumber);
+    this.addTodoEmitter.emit(todo);
+  }
   serailNumber: string = "";
 
 
