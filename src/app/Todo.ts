@@ -1,7 +1,7 @@
 
 
 export class TodoModel {
-    serailNumber: string = "";
+    serailNumber?: string;
     /**
      *
      */
@@ -12,5 +12,10 @@ export class TodoModel {
 
 
     }
+
+}
+
+export interface TodoI {
+    name: string,
 
 }

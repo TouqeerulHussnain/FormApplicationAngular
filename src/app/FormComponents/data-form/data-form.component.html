@@ -1,0 +1,59 @@
+<body style="background-color:blue">
+
+    <div class="container p-5" style="background-color:blue;  border-radius: 15px; ">
+        <h1>s</h1>
+        <div class=" d-flex flex-wrap col-12 justify-content-center " style="border-radius:20px">
+            <div class="col-lg-6  col-md-6 col-sm-6 align-items-center justify-content-center p-5 firstBox">
+                <h1 class="text-start" style="font-weight:600; "> Lets Start Working</h1>
+                <p style="font-size:30px;margin-bottom:50px;"> How about starting chat</p>
+                <img src="src\assets\people.jpeg" class="appImag" />
+            </div>
+
+            <div class="col-lg-6 col-md-6  col-sm-6 align-items-center SecondBox p-5">
+                <form [formGroup]="personForm" (ngSubmit)="OnSubmitForm()">
+
+                    <label class="textFieldTitle">Name</label>
+                    <input class="txtFieldStyle form-control" placeholder="Enter Name" name="name" type="text"
+                        [formControl]="personForm.controls.name" />
+                    <span class="text-danger">
+                        Name is required.
+                    </span>
+                    <br />
+
+                    <label class="textFieldTitle"> Company</label>
+                    <input class="txtFieldStyle form-control" name="Company" placeholder="ABC company" type="text"
+                        [formControl]="personForm.controls.company" />
+                    <span class="text-danger"></span>
+                    <br />
+                    <label class="textFieldTitle"> Phone</label>
+                    <input class="txtFieldStyle form-control" name="Phone" placeholder="0xxxxxxxxxx" type="text"
+                        [formControl]="personForm.controls.phone" />
+                    <span class="text-danger"></span>
+                    <br />
+                    <label class="textFieldTitle"> Email</label>
+                    <input class="txtFieldStyle form-control" name="Email" placeholder="email@mail.com" type="text"
+                        [formControl]="personForm.controls.email" />
+                    <span class="text-danger"></span>
+                    <br />
+                    <label class="textFieldTitle"> Reason For Contact</label>
+                    <input class="txtFieldStyle form-control" name="ReasonForContact" placeholder="Enter reason"
+                        type="text" [formControl]="personForm.controls.reasonForContact" />
+                    <span class="text-danger"></span>
+                    <br />
+                    <label class="textFieldTitle"> Anything else we need to know</label>
+                    <textarea class="discription form-control" name="MoreDetails"
+                        placeholder="Enter your description here..."
+                        [formControl]="personForm.controls.moreDetails"></textarea>
+
+                    <button class="btn btn-primary m-3 btnStyle" type="submit">Submit Form</button>
+                    <a class="btn btn-primary m-3 btnStyle">View</a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    >
+</body>
