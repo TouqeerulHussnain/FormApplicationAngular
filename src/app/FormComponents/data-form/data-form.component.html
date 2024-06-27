@@ -14,7 +14,7 @@
 
                     <label class="textFieldTitle">Name</label>
                     <input class="txtFieldStyle form-control" placeholder="Enter Name" name="name" type="text"
-                        [formControl]="personForm.controls.name" />
+                        formControlName="name" />
                     <span class="text-danger">
                         Name is required.
                     </span>
@@ -45,7 +45,8 @@
                         placeholder="Enter your description here..."
                         [formControl]="personForm.controls.moreDetails"></textarea>
 
-                    <button class="btn btn-primary m-3 btnStyle" type="submit">Submit Form</button>
+                    <button class="btn btn-primary m-3 btnStyle" type="submit" (click)="OnSubmitForm()">Submit
+                        Form</button>
                     <a class="btn btn-primary m-3 btnStyle">View</a>
 
                 </form>
