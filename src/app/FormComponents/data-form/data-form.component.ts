@@ -16,6 +16,10 @@ import { error } from 'console';
 })
 export class DataFormComponent {
 
+  OnViewSupdate() {
+
+  }
+
 
   personForm = new FormGroup({
     name: new FormControl<string>('', Validators.required),
@@ -51,12 +55,16 @@ export class DataFormComponent {
     console.log("testperson", testperson)
     console.log("person", person)
 
-    this.http.post("https://localhost:7070/api/Persons/AddPerson", testperson).subscribe({
+    this.http.post("https://localhost:7070/api/Persons/AddPerson", person).subscribe({
       next: (value) => {
         console.log("added")
 
       }
     });
+  }
+
+  observers() {
+
     let count = 0;
     let internalSubscribe: Subscription;
 
@@ -101,10 +109,6 @@ export class DataFormComponent {
       console.log("unsubscribe observe",);
       internalSubscribe.unsubscribe();
     }, 5000);
-
-
-
-
   }
 
 

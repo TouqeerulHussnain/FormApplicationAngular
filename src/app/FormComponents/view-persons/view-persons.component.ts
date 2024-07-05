@@ -24,13 +24,11 @@ export class ViewPersonsComponent implements OnInit {
     console.log(this.person);
   }
 
-
-
-
-
-
-
   private async getContacts(): Promise<Person[]> {
+    console.log("getContacts called");
     return await firstValueFrom(this.http.get<Person[]>("https://localhost:7070/api/Persons/GetAllContacts"));
+  }
+  async OnViewClick() {
+    this.person = await this.getContacts();
   }
 }
